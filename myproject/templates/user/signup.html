@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+
+<div class="wrapper">
+    <div class="title">
+        Register Here
+    </div>
+   <!-- <p>comment</p> -->
+
+  <div class="form">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="input_field">
+            <input type="text" name="{{  form.username.name }}" placeholder="Username" class="input">
+            <i class="fas fa-user"></i>
+            {% for error in form.username.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <!-- <div class="input_field">
+            <input type="email" name="{{ form.email.name }}" placeholder="Email" class="input">
+            <i class="far fa-envelope"></i>
+            {% for error in form.email.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div> -->
+        <div class="input_field">
+            <input type="password" name="{{ form.password1.name }}" placeholder="Password" class="input">
+            <i class="fas fa-lock"></i>
+            {% for error in form.password1.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        <div class="input_field">
+            <input type="password" name="{{ form.password2.name }}" placeholder="Confirm Password" class="input">
+            <i class="fas fa-lock"></i>
+            {% for error in form.password2.errors %}
+            <span class="error">{{ error }}</span>
+            {% endfor %}
+        </div>
+        
+        <div class="btn">
+            <button type="submit">Register</button>
+        </div>
+        {% comment %} {{form.errors}} {% endcomment %}
+        <div class="login-link">
+            <p>Already have an account? <a href="/">Exit</a></p>
+            
+        </div>
+    </form>    
+</div>
+
+</div>
+<style>
+
+    .error {
+            font-size: 12px; 
+            color: red;
+        }
+  
+    @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        text-decoration: none;
+        font-family: 'Josefin Sans', sans-serif;
+    }
+
+    body {
+        background: #3aaf9f;
+    }
+
+    .wrapper {
+        max-width: 350px;
+        width: 100%;
+        height: auto;
+        background: #fff;
+        padding: 60px 45px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 20px;
+    }
+
+    .wrapper .title {
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 26px;
+        font-weight: bold;
+        color: #3aaf9f;
+    }
+
+    .wrapper .social_media {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
+
+    .wrapper .social_media .item {
+        margin: 0 5px;
+        width: 35px;
+        height: 35px;
+        line-height: 35px;
+        text-align: center;
+        border: 2px solid #eeeeee;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #eeeeee;
+        transition: all 0.5s ease;
+    }
+
+    .wrapper .social_media .item:hover {
+        border: 2px solid #3aaf9f;
+        color: #3aaf9f;
+    }
+
+    .wrapper .form .input_field {
+        position: relative;
+        margin-bottom: 10px;
+    }
+
+    .wrapper .form .input_field .input {
+        width: 100%;
+        padding: 12px;
+        padding-left: 30px;
+        border: none;
+        background: #eeeeee;
+    }
+
+    .wrapper .form .btn button {
+    width: 100%; /* Make button width 100% */
+    background: #3aaf9f; /* Use the same color as the register heading */
+    text-align: center;
+    padding: 12px;
+    border-radius: 25px;
+    color: #fff; /* Text color */
+    border: none; /* Remove border */
+    cursor: pointer;
+    font-size: 16px; /* Adjust font size */
+    font-weight: bold; /* Make text bold */
+}
+.wrapper .login-link {
+    margin-top: 20px;
+    text-align: center;
+    color: #555;
+}
+
+.wrapper .login-link p {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.wrapper .login-link a {
+    color: #677eff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.wrapper .login-link a:hover {
+    text-decoration: underline;
+}
+
+.wrapper .form .btn button:hover {
+    background: #2e8e83; /* Change background color on hover */
+}
+
+    .wrapper .form .btn a {
+        color: #fff;
+    }
+
+    .wrapper .form .input_field i {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        font-size: 14px;
+        color: #1d2120;
+    }
+
+    ::-webkit-input-placeholder {
+        /* Chrome/Opera/Safari */
+        color: #1d2120;
+    }
+
+    ::-moz-placeholder {
+        /* Firefox 19+ */
+        color: #1d2120;
+    }
+
+    :-ms-input-placeholder {
+        /* IE 10+ */
+        color: #1d2120;
+    }
+</style>

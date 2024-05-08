@@ -1,0 +1,34 @@
+{% extends "user/user_base.html" %}
+{% block content %}
+
+
+<div class="container d-flex justify-content-center align-items-center mt-3">
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Account Details</h5>
+            {% comment %} <h2>Welcome, {{ username }}!</h2> {% endcomment %}
+            <p>Your current balance is: {{ balance }}</p>
+            <!-- <h5 class="card-title text-center">Deposit Money</h5> -->
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="amount">Enter Amount to Withdraw:</label>
+                    <input type="text" class="form-control" id="amount" name="amount" min="0" required>
+                </div>
+                <div class="mt-4 text-center">
+                <button type="submit" class="btn btn-danger">Withdraw</button>
+
+            </div>
+            {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <p class="text-danger">{{ message }}</p>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            </form>
+          
+        </div>
+    </div>
+</div>
+{% endblock  %}

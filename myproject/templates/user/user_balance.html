@@ -1,0 +1,16 @@
+{% extends "user/user_base.html" %}
+{% block content %}
+
+
+<div class="container d-flex justify-content-center align-items-center mt-3">
+    <div class="card" style="width: 25rem;">
+        <div class="card-body">
+            <h5 class="card-title text-center">Account Details</h5>
+            <h2>Welcome, {{ username }}!</h2>
+            <p>Your current balance is: {{ balance }}</p>
+            <!-- <h5 class="card-title text-center">Deposit Money</h5> -->
+          
+        </div>
+    </div>
+</div>
+{% endblock  %}
